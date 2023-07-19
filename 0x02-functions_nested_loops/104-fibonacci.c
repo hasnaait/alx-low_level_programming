@@ -7,30 +7,25 @@
  *
  *
  * Return: Always 0 (Success)
-*/
+ */
 
 int main(void)
 {
-	int counter = 2;
+	int count;
+	unsigned long long f1 = 1, f2 = 2, sum;
 
-	float a = 1;
-	float b = a + 1;
-	float c = a + b;
+	printf("%llu, %llu", f1, f2);
 
-	printf("%.0f, ", a);
-	printf("%.0f, ", b);
-	while (counter < 98)
+	for (count = 3; count <= 98; ++count)
 	{
-		counter++;
-		printf("%.0f", c);
-		a = b;
-		b = c;
-		c = a + b;
-		if (counter < 98)
-		{
-			printf(", ");
-		}
+		sum = f1 + f2;
+		printf(", %llu", sum);
+
+		f1 = f2;
+		f2 = sum;
 	}
+
 	printf("\n");
-	return (0);
+
+	return 0;
 }
