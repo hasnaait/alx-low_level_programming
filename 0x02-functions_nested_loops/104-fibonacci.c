@@ -13,9 +13,9 @@
 
 int main(void)
 {
-	unsigned int a = 1;
-	unsigned int b = 2;
-	unsigned int next;
+	int a = 1;
+	int b = 2;
+	int next;
 	int count;
 
 	printf("%u, %u", a, b);
@@ -23,7 +23,7 @@ int main(void)
 	for (count = 2; count < 98; count++)
 	{
 		next = a + b;
-		printf(", %u", next);
+		printf(", %i", next);
 		a = b;
 		b = next;
 	}
