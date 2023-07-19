@@ -5,30 +5,32 @@
  * Description: prints the first 98 Fibonacci numbers
  *	starting with 1 and 2 followed by a new line
  *
- *	Solution was copied from Nobert Patrick
- *	Wise, github handle: Trikcode
  *
  * Return: Always 0 (Success)
 */
 
 int main(void)
 {
-	int a = 1;
-	int b = 2;
-	int next;
-	int count;
+	int counter = 2;
 
-	printf("%u, %u", a, b);
+	float a = 1;
+	float b = a + 1;
+	float c = a + b;
 
-	for (count = 2; count < 98; count++)
+	printf("%.0f, ", a);
+	printf("%.0f, ", b);
+	while (counter < 98)
 	{
-		next = a + b;
-		printf(", %i", next);
+		counter++;
+		printf("%.0f", c);
 		a = b;
-		b = next;
+		b = c;
+		c = a + b;
+		if (counter < 98)
+		{
+			printf(", ");
+		}
 	}
-
 	printf("\n");
-
 	return (0);
 }
