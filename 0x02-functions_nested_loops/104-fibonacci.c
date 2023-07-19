@@ -1,69 +1,62 @@
-#include <stdio.h>
-
-/**
- * fibLength - Calculate the number of digits in a Fibonacci number
- *
- * @num: The Fibonacci number
- *
- * Return: The number of digits in the Fibonacci number
- */
-int fibLength(int num)
+int numLength(int num)
 {
-    int length = 0;
+	int length = 0;
 
-    if (!num)
-        return (1);
+	if (!num)
+		return (1);
 
-    while (num)
-    {
-        num = num / 10;
-        length += 1;
-    }
+	while (num)
+	{
+		num = num / 10;
+		length += 1;
+	}
 
-    return (length);
+	return (length);
 }
 
 /**
  * main - Entry point
  *
- * Description: Prints the first 98 Fibonacci numbers
- * starting with 1 and 2 followed by a new line
+ * Description: prints the first 98 Fibonacci numbers
+ *	starting with 1 and 2 followed by a new line
+ *
+ *	Solution was copied from Nobert Patrick
+ *	Wise, github handle: Trikcode
  *
  * Return: Always 0 (Success)
- */
+*/
+
 int main(void)
 {
-    int count, initial0s;
-    unsigned long fib1 = 1, fib2 = 2, sum, max = 100000000, fib1Overflow = 0, fib2Overflow = 0, sumOverflow = 0;
+	int count, initial0s;
+	unsigned long f1 = 1, f2 = 2, sum, mx = 100000000, f1o = 0, f2o = 0, sumo = 0;
 
-    printf("%lu, %lu", fib1, fib2);
+	for (count = 1; count <= 98; ++count)
+	{
+		if (f1o > 0)
+			printf("%lu", f1o);
+		initial0s = numLength(mx) - 1 - numLength(f1);
 
-    for (count = 3; count <= 98; ++count)
-    {
-        if (fib1Overflow > 0)
-            printf("%lu", fib1Overflow);
-        initial0s = fibLength(max) - 1 - fibLength(fib1);
+		while (f1o > 0 && initial0s > 0)
+		{
+			printf("%d", 0);
+			--initial0s;
+		}
 
-        while (fib1Overflow > 0 && initial0s > 0)
-        {
-            printf("%d", 0);
-            --initial0s;
-        }
+		printf("%lu", f1);
 
-        printf("%lu", fib1);
+		sum = (f1 + f2) % mx;
+		sumo = f1o + f2o + (f1 + f2) / mx;
+		f1 = f2;
+		f1o = f2o;
+		f2 = sum;
+		f2o = sumo;
 
-        sum = (fib1 + fib2) % max;
-        sumOverflow = fib1Overflow + fib2Overflow + (fib1 + fib2) / max;
-        fib1 = fib2;
-        fib1Overflow = fib2Overflow;
-        fib2 = sum;
-        fib2Overflow = sumOverflow;
+		if (count != 98)
+			printf(", ");
+		else
+			printf("\n");
+	}
 
-        if (count != 98)
-            printf(", ");
-        else
-            printf("\n");
-    }
-
-    return (0);
+	return (0);
 }
