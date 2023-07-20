@@ -1,8 +1,7 @@
 #include"main.h"
 
 /**
- * more_numbers - print 0 - 14 ten times and you
- *		can only use _putchar three times
+ *print_most_numbers- print 0 to 9 except 2 and 4
  *
  * Return: Always 0 (Success)
 */
