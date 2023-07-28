@@ -1,4 +1,3 @@
-#include "_strlen.c"
 #include "main.h"
 /**
  * infinite_add - adds two numbers in a buffer
@@ -12,9 +11,10 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int i = 0, j = 0, k, l, m, n;
+	int i, j, k, l, m, n;
 
-	i = _strlen(n1);
+	for (i = 0; n1[i]; i++)
+		;
 	for (j = 0; n2[j]; j++)
 		;
 	if (i > size_r || j > size_r)
