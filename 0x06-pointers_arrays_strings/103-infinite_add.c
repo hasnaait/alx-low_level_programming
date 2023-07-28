@@ -21,14 +21,12 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (len1 > size_r - 1 || len2 > size_r - 1)
 		return (0);
 
-	int carry = 0;
-	int i = len1 - 1, j = len2 - 1, k = 0;
+	int carry = 0, i = len1 - 1, j = len2 - 1, k = 0;
 
 	while (i >= 0 || j >= 0 || carry)
 	{
 		int num1 = (i >= 0) ? n1[i] - '0' : 0;
-		int num2 = (j >= 0) ? n2[j] - '0' : 0;
-		int sum = num1 + num2 + carry;
+		int num2 = (j >= 0) ? n2[j] - '0' : 0, sum = num1 + num2 + carry;
 
 		carry = sum / 10;
 		r[k] = sum % 10 + '0';
@@ -36,7 +34,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		j--;
 		k++;
 	}
-
 	r[k] = '\0';
 
 	int l = 0, m = k - 1;
