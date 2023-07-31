@@ -2,7 +2,7 @@
 
 /**
  * _memcpy - copies @n bytes from memory area @src
- * 		to memory area @dest
+ *	to memory area @dest
  *
  * @n: numbers of bytes to  copy
  *
