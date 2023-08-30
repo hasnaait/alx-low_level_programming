@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * pop_listint - delet head 
+ *pop_listint - delet head
  *@head: a double pointer
  *
  *Return: empty
