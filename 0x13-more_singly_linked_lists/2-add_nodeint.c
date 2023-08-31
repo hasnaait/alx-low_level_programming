@@ -3,7 +3,7 @@
 /**
   * add_nodeint - add node at beginning of the  list.
   *
-  * @head: head 
+  * @head: head
   * @n: int add the list
   *
   * Return: NULL if it failed
