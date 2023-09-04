@@ -4,7 +4,7 @@
 
 /**
  * args_nbr- checks for the correct number of arguments
- *:%s/article/tutorial/g @argc: number of arguments
+ *@argc: number of arguments
  *
  * Return: void
  */
