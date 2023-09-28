@@ -3,7 +3,7 @@
 /**
  * _sqrt__recursive -  square root of a number
  * @n: Number raw.
- * @r: Result.
+ * @m: Result.
  * Return: Result.
  */
 
