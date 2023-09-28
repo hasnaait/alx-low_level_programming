@@ -15,7 +15,7 @@ int is_prime_recursive(int n, int div)
 		return (1);
 	if (n % div == 0)
 		return (0);
-	return (is_prime_recursive(n, divisor - 1));
+	return (is_prime_recursive(n, div - 1));
 }
 
 /**
