@@ -22,7 +22,7 @@ int _sqrt__recursive(int n, int m)
 		return (-1);
 
 	if (n != m * m)
-		return (_sqrt_nat(n, m + 1));
+		return (_sqrt__recursive(n, m + 1));
 
 	if (n == m * m)
 		return (m);
