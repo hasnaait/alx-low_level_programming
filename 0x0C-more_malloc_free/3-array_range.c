@@ -3,7 +3,7 @@
 
 /**
  * *array_range - create an array of ints
- * @min: minimum range of values 
+ * @min: minimum range of values
  * @max: maximum range of values d number of elements
  *
  * Return: pointer to the new array
